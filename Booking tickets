@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class RailwayTicket {
+    private String source;
+    private String destination;
+    private int numOfTickets;
+    private double totalPrice;
+
+    public RailwayTicket(String source, String destination, int numOfTickets, double pricePerTicket) {
+        this.source = source;
+        this.destination = destination;
+        this.numOfTickets = numOfTickets;
+        this.totalPrice = numOfTickets * pricePerTicket;
+    }
+
+    public void displayTicketDetails() {
+        System.out.println("Ticket Details:");
+        System.out.println("Source: " + source);
+        System.out.println("Destination: " + destination);
+        System.out.println("Number of Tickets: " + numOfTickets);
+        System.out.println("Total Price: $" + totalPrice);
+    }
+}
+
+public class RailwayTicketBooking {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Railway Ticket Booking System");
+
+        System.out.print("Enter source: ");
+        String source = scanner.nextLine();
+
+        System.out.print("Enter destination: ");
+        String destination = scanner.nextLine();
+
+        System.out.print("Enter number of tickets: ");
+        int numOfTickets = scanner.nextInt();
+
+        System.out.print("Enter price per ticket: $");
+        double pricePerTicket = scanner.nextDouble();
+
+        // Creating ticket object
+        RailwayTicket ticket = new RailwayTicket(source, destination, numOfTickets, pricePerTicket);
+
+        // Displaying ticket details
+        ticket.displayTicketDetails();
+
+        scanner.close();
+    }
+}
